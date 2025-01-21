@@ -3,23 +3,24 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background: linear-gradient(
+    background-color: rgba(252, 250, 242, 0.9);
+    /* background: linear-gradient(
         135deg,
         rgb(40, 46, 106) 0%,
         rgb(60, 68, 140) 50%,
         rgb(40, 46, 106) 100%
-    );
+    ); */
     background-attachment: fixed;
     min-height: 100vh;
 }
 
-.container {
+/* .container {
     width: 80%;
     margin: 0 auto;
     background-color: rgba(252, 250, 242, 0.9);
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     /* padding: 20px; */
-}
+} */
 
 @media screen and (max-width: 768px) {
     .container {
