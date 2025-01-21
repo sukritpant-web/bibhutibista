@@ -1,0 +1,449 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: linear-gradient(
+        135deg,
+        rgb(40, 46, 106) 0%,
+        rgb(60, 68, 140) 50%,
+        rgb(40, 46, 106) 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(252, 250, 242, 0.9);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* padding: 20px; */
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin: auto;
+        box-shadow: none;
+    }
+}
+
+header {
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.header-home{
+    background-image: url('img/mountain_cropped.jpg');
+    background-position: top;
+}
+
+.header-services{
+    background-image: url('img/sky.jpg');
+}
+
+.header-portfolio{
+    background-image: url('img/sea.jpg');
+}
+
+.header-contact{
+    background-image: url('img/family.jpg');
+}
+
+.logo img {
+    height: 200px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: rgb(40, 46, 106);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    overflow: overlay;
+}
+
+h2 {
+    color: #333;
+}
+
+.force-height img{
+    height: 200px;
+    width: 300px;
+}
+
+.force-height-2 img{
+    height: 350px;
+    width: 300px;
+}
+
+.force-height-3 img{
+    min-height: 500px;
+    width: 300px;
+}
+
+img {
+    float: right;
+    margin-left: 20px;
+    max-width: 300px;
+    height: auto;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 auto;
+    position: static;
+    bottom: 0;
+    
+}
+
+/* Services Page Styles */
+.services-page {
+    padding: 40px 0;
+}
+
+.service-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.service-intro h1 {
+    color: rgb(40, 46, 106);
+    margin-bottom: 20px;
+}
+
+.services-showcase {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.service-image {
+    width: 60%;
+    height: auto;
+}
+
+.service-image img {
+    float: left;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.service-boxes {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-box {
+    background-color: rgba(255, 253, 208, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-box h2 {
+    color: rgb(40, 46, 106);
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-showcase {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .service-boxes {
+        position: static;
+        width: 100%;
+    }
+}
+
+/* Add this to your existing styles.css */
+
+.portfolio-page {
+    padding: 40px 0;
+}
+
+.intro {
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 40px;
+}
+
+.logo-scroll {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+}
+
+.logo-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo-card {
+    flex: 0 0 200px; /* Adjust the size as needed */
+    height: 200px; /* Should be the same as the flex-basis to make it square */
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.logo-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 20px; /* Increased padding */
+    cursor: pointer;
+    font-size: 24px; /* Increased font size */
+    width: 60px; /* Set a specific width */
+    height: 60px; /* Set a specific height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make the buttons circular */
+    transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.scroll-btn.left { left: 10px; } /* Adjusted positioning */
+.scroll-btn.right { right: 10px; } /* Adjusted positioning */
+
+/* You may need to adjust the icon size if you're using Font Awesome or similar */
+.scroll-btn i {
+    font-size: 30px; /* Adjust as needed */
+}
+
+/* Specific adjustments for the logo section if needed */
+.logo-scroll .scroll-btn {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Specific adjustments for the testimonial section if needed */
+.testimonial .scroll-btn {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.project-showcase {
+    margin-bottom: 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* This centers the content horizontally */
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;  /* Add some padding around the content */
+}
+
+.project-item img {
+    width: 100%;  /* Make the image take the full width of its container */
+    max-width: 500px;  /* Limit the maximum width of the image */
+    min-height: 300px;  /* Maintain aspect ratio */
+    max-height: 300px;
+    object-fit: fit;  /* Ensure the image covers the area without stretching */
+    border-radius: 8px;  /* Optional: add rounded corners to the image */
+    margin-bottom: 15px;  /* Add some space between the image and the text */
+}
+
+.project-item p {
+    text-align: left;  /* Center the text */
+    margin: 0;
+    padding: 10px;  /* Add some horizontal padding to the text */
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.testimonial {
+    position: relative;
+    background-image: url('img/logo/butterflies.png');
+    background-size: 66%;
+    background-position: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.testimonial-content {
+    background-color: rgba(255, 253, 208, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    word-wrap: break-word; /* Allow long words to break and wrap */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    transition: height 0.3s ease; /* Smooth transition for height changes */
+}
+
+.testimonial-content p {
+    margin: 0 0 10px 0; /* Add some bottom margin to paragraphs */
+}
+
+.testimonial-content h3 {
+    margin: 0 0 5px 0; /* Add some bottom margin to the name */
+}
+
+.testimonial-text {
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.burger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.burger-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.burger-icon span:nth-child(2) {
+    top: 8px;
+}
+
+.burger-icon span:nth-child(3) {
+    top: 16px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+.credit p, .credit a {
+    text-align: center;
+    color: white;
+    font-size: 10px;
+}
