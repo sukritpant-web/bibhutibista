@@ -3,18 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoContainer = document.querySelector('.logo-container');
     const logoScrollLeftBtn = document.querySelector('.logo-scroll .left');
     const logoScrollRightBtn = document.querySelector('.logo-scroll .right');
-    
+
     if (logoScrollLeftBtn && logoScrollRightBtn && logoContainer) {
         // Make sure the container is scrollable
         logoContainer.style.overflowX = 'scroll';
         logoContainer.style.scrollBehavior = 'smooth';
-        
+
         // Hide scrollbar but keep functionality
         logoContainer.style.scrollbarWidth = 'none'; // Firefox
         logoContainer.style.msOverflowStyle = 'none'; // IE and Edge
         logoContainer.style.webkitOverflowScrolling = 'touch'; // iOS
         logoContainer.style.overflowY = 'hidden'; // Hide vertical scrollbar
-        
+
         // Hide scrollbar in webkit browsers
         logoContainer.style.cssText += `
             &::-webkit-scrollbar {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logoScrollLeftBtn.addEventListener('click', () => {
             logoContainer.scrollLeft -= 300; // Use scrollLeft instead of scrollBy
         });
-        
+
         logoScrollRightBtn.addEventListener('click', () => {
             logoContainer.scrollLeft += 300; // Use scrollLeft instead of scrollBy
         });
@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show/hide scroll buttons based on scroll position
         logoContainer.addEventListener('scroll', () => {
             logoScrollLeftBtn.style.display = logoContainer.scrollLeft > 0 ? 'block' : 'none';
-            logoScrollRightBtn.style.display = 
+            logoScrollRightBtn.style.display =
                 logoContainer.scrollLeft < logoContainer.scrollWidth - logoContainer.clientWidth ? 'block' : 'none';
         });
 
         // Initial check for button visibility
         logoScrollLeftBtn.style.display = 'none';
-        logoScrollRightBtn.style.display = 
+        logoScrollRightBtn.style.display =
             logoContainer.scrollWidth > logoContainer.clientWidth ? 'block' : 'none';
     }
 
@@ -143,6 +143,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.classList.remove('active');
                 burgerMenu.classList.remove('open');
             }
+        });
+    }
+
+    // Back to Top functionality
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
 });
