@@ -165,4 +165,60 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Project loading
+    const ongoingContainer = document.getElementById('ongoing-projects-container');
+    const completedContainer = document.getElementById('completed-projects-container');
+
+    if (ongoingContainer || completedContainer) {
+        fetch('projects.json')
+            .then(response => response.json())
+            .then(data => {
+                if (ongoingContainer && data.ongoing) {
+                    data.ongoing.forEach(project => {
+                        ongoingContainer.innerHTML += createProjectCard(project, true);
+                    });
+                }
+
+                if (completedContainer && data.completed) {
+                    data.completed.forEach(project => {
+                        completedContainer.innerHTML += createProjectCard(project, false);
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading projects:', error));
+    }
+
+    function createProjectCard(project, isOngoing) {
+        const title = project.assignment_title || 'Untitled';
+        const client = project.client || 'Unknown Client';
+        const type = project.assignment_type || 'Unknown Type';
+        const duration = project.duration || '';
+        const thematicArea = project.thematic_area || '';
+
+        let pillsHtml = '';
+        if (thematicArea) {
+            const areas = thematicArea.split(',').map(a => a.trim());
+            areas.forEach(area => {
+                pillsHtml += `<span class="thematic-pill">${area}</span>`;
+            });
+        }
+
+        const cardClass = isOngoing ? 'project-card ongoing' : 'project-card';
+
+        return `
+            <div class="${cardClass}">
+                <span class="project-client">${client}</span>
+                <div class="project-detail-item"><span class="project-label">Assignment Title:</span> ${title}</div>
+                <div class="project-detail-item"><span class="project-label">Assignment Type:</span> ${type}</div>
+                <div class="project-duration-container">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="project-duration-text">${duration}</span>
+                </div>
+                <div class="thematic-pills-container">
+                    ${pillsHtml}
+                </div>
+            </div>
+        `;
+    }
 });
