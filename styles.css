@@ -1112,10 +1112,22 @@ footer p {
 
 /* Project Card Redesign */
 .project-grid-journey {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     padding: 20px 0;
+}
+
+@media screen and (max-width: 992px) {
+    .project-grid-journey {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-grid-journey {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
@@ -1199,23 +1211,27 @@ footer p {
     .project-card {
         padding: 20px;
     }
-    
+
     .project-client {
         font-size: 1.15rem;
     }
-    
+
     .project-card:hover {
         transform: none;
     }
 }
+
 /* Ongoing Project Style */
 .project-card.ongoing {
-    border-left: 6px solid #28a745; /* Green border */
-    background-color: rgba(40, 167, 69, 0.05); /* Slight green tint */
+    border-left: 6px solid #28a745;
+    /* Green border */
+    background-color: rgba(40, 167, 69, 0.05);
+    /* Slight green tint */
 }
 
 .project-card.ongoing .project-client {
-    color: #1e7e34; /* Darker green for client name */
+    color: #1e7e34;
+    /* Darker green for client name */
 }
 
 .project-card.ongoing .project-duration-container {
