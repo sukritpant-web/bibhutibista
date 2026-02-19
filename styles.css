@@ -1238,6 +1238,58 @@ footer p {
     background: #d4edda;
 }
 
-.project-card.ongoing .project-duration-container i {
-    color: #155724;
+
+/* Separated Contact Footer */
+.contact-footer {
+    background-color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.contact-footer p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--headings);
+}
+
+.contact-footer a {
+    color: var(--headings);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.contact-footer a:hover {
+    color: #003366;
+}
+
+#footer-contact:target {
+    animation: highlight-footer-light 3s ease;
+}
+
+@keyframes highlight-footer-light {
+    0% {
+        background-color: var(--white);
+    }
+
+    30% {
+        background-color: #e6f3ff;
+    }
+
+    50% {
+        background-color: #cce7ff;
+    }
+
+    100% {
+        background-color: var(--white);
+    }
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #e0e0e0;
 }
