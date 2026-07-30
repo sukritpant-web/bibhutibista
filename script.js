@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // In Memoriam Modal
+    const memoriamModal = document.getElementById('memoriam-modal');
+    const memoriamClose = document.getElementById('memoriam-close');
+
+    if (memoriamModal) {
+        memoriamModal.classList.add('show');
+
+        const closeMemoriamModal = () => memoriamModal.classList.remove('show');
+
+        if (memoriamClose) {
+            memoriamClose.addEventListener('click', closeMemoriamModal);
+        }
+
+        memoriamModal.addEventListener('click', (event) => {
+            if (event.target === memoriamModal) {
+                closeMemoriamModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMemoriamModal();
+            }
+        });
+    }
+
     // Logo scrolling
     const logoContainer = document.querySelector('.logo-container');
     const logoScrollLeftBtn = document.querySelector('.logo-scroll .left');
