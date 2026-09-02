@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const memoriamModal = document.getElementById('memoriam-modal');
     const memoriamClose = document.getElementById('memoriam-close');
 
-    if (memoriamModal) {
+    if (memoriamModal && memoriamModal.dataset.enabled === 'true') {
         memoriamModal.classList.add('show');
 
         const closeMemoriamModal = () => memoriamModal.classList.remove('show');
