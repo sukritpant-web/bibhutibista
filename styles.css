@@ -455,6 +455,11 @@ footer p {
     /* Remove previous float */
 }
 
+/* Bias the crop toward the top so faces aren't cut off */
+.consultant-image img.consultant-image-top {
+    object-position: top;
+}
+
 .consultant-boxes {
     grid-column: 7 / span 6;
     grid-row: 1;
