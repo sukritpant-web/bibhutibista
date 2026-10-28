@@ -1,29 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // In Memoriam Modal
-    const memoriamModal = document.getElementById('memoriam-modal');
-    const memoriamClose = document.getElementById('memoriam-close');
+    // Pop-up modals: shown on load when data-enabled="true".
+    // Closing hides it for the rest of the browser session.
+    const setupModal = (id) => {
+        const modal = document.getElementById(id);
+        if (!modal || modal.dataset.enabled !== 'true') return;
 
-    if (memoriamModal && memoriamModal.dataset.enabled === 'true') {
-        memoriamModal.classList.add('show');
+        const storageKey = `${id}-dismissed`;
+        if (sessionStorage.getItem(storageKey)) return;
 
-        const closeMemoriamModal = () => memoriamModal.classList.remove('show');
+        const close = () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+            sessionStorage.setItem(storageKey, '1');
+            document.removeEventListener('keydown', onKeydown);
+        };
+        const onKeydown = (event) => {
+            if (event.key === 'Escape') close();
+        };
 
-        if (memoriamClose) {
-            memoriamClose.addEventListener('click', closeMemoriamModal);
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+
+        const closeButton = modal.querySelector('.modal-close');
+        if (closeButton) {
+            closeButton.addEventListener('click', close);
+            closeButton.focus();
         }
-
-        memoriamModal.addEventListener('click', (event) => {
-            if (event.target === memoriamModal) {
-                closeMemoriamModal();
-            }
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) close();
         });
+        document.addEventListener('keydown', onKeydown);
+    };
 
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeMemoriamModal();
-            }
-        });
-    }
+    setupModal('mvo-modal');
+    setupModal('memoriam-modal');
 
     // Logo scrolling
     const logoContainer = document.querySelector('.logo-container');

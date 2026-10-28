@@ -9,15 +9,112 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
+    <!-- Mission / Values / Vision pop-up. To disable, change data-enabled to "false" -->
+    <div id="mvo-modal" class="modal-overlay" data-enabled="true">
+        <div class="modal-box mvo-box" role="dialog" aria-modal="true" aria-labelledby="mvo-title">
+            <button class="modal-close" title="Close" aria-label="Close">&times;</button>
+
+            <svg class="mvo-mountains" viewBox="0 0 640 200" aria-hidden="true">
+                <polygon points="0,200 160,40 260,140 360,60 520,200" />
+                <polygon points="300,200 520,20 640,120 640,200" />
+            </svg>
+
+            <div class="mvo-header">
+                <div>
+                    <p class="mvo-brand">BB <span>Research</span> &amp; Consulting Services</p>
+                    <p class="mvo-tagline">Independent Evaluation &amp; Research <strong>(VAT Registered
+                            Consultant)</strong></p>
+                    <h2 id="mvo-title">From <span>Evidence</span> to Impact</h2>
+                </div>
+                <p class="mvo-intro">Mission, values and vision at a glance: what I do, how I work, and the change I
+                    seek.</p>
+            </div>
+
+            <div class="mvo-cards">
+                <div class="mvo-card mvo-mission">
+                    <div class="mvo-card-top">
+                        <span class="mvo-pill">Mission</span>
+                        <span class="mvo-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="10.5" cy="10.5" r="6.5" />
+                                <path d="M15.5 15.5 20 20M8 12.5v-2M10.5 12.5V8.5M13 12.5v-3" />
+                            </svg>
+                        </span>
+                    </div>
+                    <p class="mvo-eyebrow">What I do</p>
+                    <h3>To turn independent evaluation and research into better decisions.</h3>
+                    <p>Programme and project evaluations, studies and research for organisations, policymakers and
+                        stakeholders, using qualitative and quantitative methods tailored to each context, delivered
+                        as clear insights and actionable recommendations.</p>
+                </div>
+
+                <span class="mvo-arrow" aria-hidden="true">&rarr;</span>
+
+                <div class="mvo-card mvo-values">
+                    <div class="mvo-card-top">
+                        <span class="mvo-pill">Values</span>
+                        <span class="mvo-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3Z" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>
+                        </span>
+                    </div>
+                    <p class="mvo-eyebrow">How I work</p>
+                    <h3>Principles behind every assignment.</h3>
+                    <ul>
+                        <li><strong>Quality &amp; integrity</strong>: sound, ethical, independent</li>
+                        <li><strong>Tailored to you</strong>: designed around client needs</li>
+                        <li><strong>Collaboration &amp; inclusion</strong>: every voice heard</li>
+                        <li><strong>Learning &amp; innovation</strong>: always improving</li>
+                    </ul>
+                </div>
+
+                <span class="mvo-arrow" aria-hidden="true">&rarr;</span>
+
+                <div class="mvo-card mvo-vision">
+                    <div class="mvo-card-top">
+                        <span class="mvo-pill">Vision</span>
+                        <span class="mvo-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M3 19 9.5 9l4 6 2-3L21 19Z" />
+                                <circle cx="16.5" cy="6.5" r="1.5" />
+                            </svg>
+                        </span>
+                    </div>
+                    <p class="mvo-eyebrow">The change I seek</p>
+                    <h3>Better decisions, guided by evidence, for better lives.</h3>
+                    <p>Organisations and policymakers who make decisions using sound evidence, creating lasting
+                        social, economic and organisational change for the people and communities they serve.</p>
+                </div>
+            </div>
+
+            <ol class="mvo-steps">
+                <li>Evaluation &amp; research</li>
+                <li>Actionable insights</li>
+                <li>Evidence-based decisions</li>
+                <li>Better lives &amp; communities</li>
+            </ol>
+
+            <div class="mvo-footer">
+                <p class="mvo-slogan">Your strategic partner for evidence-based decisions.</p>
+                <p>www.bibhutibista.com</p>
+            </div>
+        </div>
+    </div>
+
     <!-- To re-enable the In Memoriam pop-up, change data-enabled to "true" -->
     <div id="memoriam-modal" class="modal-overlay" data-enabled="false">
         <div class="modal-box">
-            <button id="memoriam-close" class="modal-close" title="Close" aria-label="Close">&times;</button>
+            <button class="modal-close" title="Close" aria-label="Close">&times;</button>
             <img src="img/jan.jpg" alt="Jan Wickman" class="modal-image">
             <div class="modal-content">
                 <h2>In Memoriam: Jan Wickman, PhD</h2>

@@ -1402,3 +1402,328 @@ footer a:hover {
         padding: 20px 20px 25px;
     }
 }
+/* Mission / Values / Vision pop-up */
+.mvo-box {
+    --mvo-navy: #1F3864;
+    --mvo-gold: #D9952A;
+    --mvo-green: #2E6B4F;
+    --mvo-cream: #F6F3EC;
+    max-width: 1100px;
+    background-color: var(--mvo-cream);
+    padding: 40px 50px 30px;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--secondary-text);
+    text-align: left;
+    overflow-x: hidden;
+}
+
+.mvo-box .modal-close {
+    background-color: var(--mvo-navy);
+}
+
+.mvo-mountains {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 55%;
+    fill: #E6E3DB;
+    pointer-events: none;
+}
+
+.mvo-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.mvo-brand,
+.mvo-tagline {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--mvo-navy);
+}
+
+.mvo-brand {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.mvo-brand span,
+#mvo-title span {
+    color: var(--mvo-gold);
+}
+
+.mvo-tagline {
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+#mvo-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 48px;
+    line-height: 1.1;
+    color: var(--mvo-navy);
+    margin: 12px 0 0;
+}
+
+.mvo-intro {
+    max-width: 320px;
+    margin: 0;
+    text-align: right;
+    font-size: 15px;
+}
+
+.mvo-cards {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: stretch;
+    gap: 14px;
+}
+
+.mvo-card {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 26px 26px 24px;
+    box-shadow: 0 4px 14px rgba(31, 56, 100, 0.06);
+    --accent: var(--mvo-navy);
+    --accent-soft: #E3E8F1;
+}
+
+.mvo-values {
+    --accent: var(--mvo-green);
+    --accent-soft: #E1EEE7;
+}
+
+.mvo-vision {
+    --accent: var(--mvo-gold);
+    --accent-soft: #FBEBD3;
+}
+
+.mvo-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mvo-pill {
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.mvo-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mvo-icon svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.mvo-eyebrow {
+    margin: 4px 0 6px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.mvo-card h3 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 23px;
+    line-height: 1.3;
+    color: var(--accent);
+    margin: 0 0 16px;
+}
+
+.mvo-card p:last-child {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.mvo-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mvo-card li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 14px;
+    font-size: 15px;
+}
+
+.mvo-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    background-color: var(--accent);
+}
+
+.mvo-card li strong {
+    color: var(--main-text);
+}
+
+.mvo-arrow {
+    align-self: center;
+    color: var(--mvo-gold);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.mvo-steps {
+    list-style: none;
+    counter-reset: mvo-step;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 36px 0 0;
+    padding: 20px 28px;
+    background-color: var(--mvo-navy);
+    border-radius: 16px;
+}
+
+.mvo-steps li {
+    counter-increment: mvo-step;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.mvo-steps li::before {
+    content: counter(mvo-step);
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--mvo-gold);
+    color: var(--mvo-navy);
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mvo-steps li:not(:last-child)::after {
+    content: '\203A';
+    margin-left: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 22px;
+}
+
+.mvo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+    font-size: 14px;
+}
+
+.mvo-footer p {
+    margin: 0;
+}
+
+.mvo-slogan {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--mvo-navy);
+}
+
+@media screen and (max-width: 1000px) {
+    .mvo-box {
+        padding: 30px 22px 22px;
+    }
+
+    .mvo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .mvo-intro {
+        text-align: left;
+    }
+
+    #mvo-title {
+        font-size: 34px;
+    }
+
+    .mvo-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .mvo-arrow {
+        transform: rotate(90deg);
+        justify-self: center;
+        line-height: 1;
+    }
+
+    .mvo-steps {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px;
+    }
+
+    .mvo-steps li {
+        font-size: 16px;
+    }
+
+    .mvo-steps li:not(:last-child)::after {
+        content: none;
+    }
+
+    .mvo-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .mvo-brand,
+    .mvo-tagline {
+        letter-spacing: 0.12em;
+    }
+
+    .mvo-card {
+        padding: 22px 20px;
+    }
+
+    .mvo-card h3 {
+        font-size: 22px;
+    }
+}
