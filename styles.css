@@ -1454,7 +1454,8 @@ footer a:hover {
 }
 
 .mvo-brand span,
-#mvo-title span {
+#mvo-title span,
+.mvo-highlight {
     color: var(--mvo-gold);
 }
 
